@@ -7,20 +7,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 
 
 public class MainActivity extends ListActivity {
-    protected ImageView ivSplash;
-    protected TextView tvSplash;
-
-
 
 
     protected  String pWebsites[] = {
@@ -37,26 +29,7 @@ public class MainActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tvSplash = (TextView) findViewById(R.id.textView);
-        ivSplash = (ImageView) findViewById(R.id.imageView);
-        ivSplash.setVisibility(View.VISIBLE);
 
-        final Animation splashText =  AnimationUtils.loadAnimation(MainActivity.this,R.anim.splashtext);
-        tvSplash.startAnimation(splashText);
-
-
-
-        ivSplash.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                ivSplash.setVisibility(View.INVISIBLE);
-                tvSplash.setVisibility(View.INVISIBLE);
-
-
-
-            }
-        });
 
 
         ArrayAdapter<String> aaCuweb = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, pWebsites );
