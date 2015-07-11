@@ -30,6 +30,8 @@ public class ViewWebsite extends Activity {
         wvWebsite.setVerticalScrollBarEnabled(true);
 
         wvWebsite.setWebViewClient(new mywebview());
+        wvWebsite.setSaveEnabled(true);
+
 
         wvWebsite.loadUrl(uWeburl.toString());
 
