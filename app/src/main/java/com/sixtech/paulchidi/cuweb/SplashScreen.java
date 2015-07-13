@@ -26,6 +26,8 @@ public class SplashScreen extends Activity {
             public void onClick(View v) {
 
                 Intent iMainActivity = new Intent(SplashScreen.this, MainActivity.class);
+                iMainActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                iMainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(iMainActivity);
             }
 
